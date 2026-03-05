@@ -6,7 +6,6 @@ const INK    = "#111111";
 const MUTED  = "#888888";
 const RULE   = "#E8E8E5";
 const ACCENT = "#B8750A";   /* amber - used sparingly */
-const SERIF  = { fontFamily: "'Instrument Serif', Georgia, serif" } as const;
 
 /* ── Micro-components ─────────────────────────── */
 function Tag({ n, label }: { n: string; label: string }) {
@@ -18,9 +17,9 @@ function Tag({ n, label }: { n: string; label: string }) {
   );
 }
 
-function H({ children, size = "2.4rem" }: { children: React.ReactNode; size?: string }) {
+function H({ children, size = "2.2rem" }: { children: React.ReactNode; size?: string }) {
   return (
-    <h2 style={{ ...SERIF, fontSize: `clamp(1.8rem, 3vw, ${size})`, color: INK, lineHeight: 1.15, fontWeight: 400, marginBottom: 24 }}>
+    <h2 style={{ fontSize: `clamp(1.6rem, 2.5vw, ${size})`, color: INK, lineHeight: 1.2, fontWeight: 500, letterSpacing: "-0.02em", marginBottom: 24 }}>
       {children}
     </h2>
   );
@@ -158,14 +157,11 @@ export default function Page() {
       <section style={{ paddingTop: 140, paddingBottom: 100 }}>
         <div style={WRAP}>
 
-          <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 56 }}>
-            <Logo s={32} />
-            <span style={{ fontSize: 11, letterSpacing: "0.18em", textTransform: "uppercase", color: MUTED, fontWeight: 400 }}>
-              Strateegiline ariplaan · 2024
-            </span>
-          </div>
+          <p style={{ fontSize: 11, letterSpacing: "0.18em", textTransform: "uppercase", color: MUTED, fontWeight: 400, marginBottom: 56 }}>
+            Legatron · Strateegiline ariplaan · 2024
+          </p>
 
-          <h1 style={{ ...SERIF, fontSize: "clamp(3rem, 6.5vw, 6rem)", color: INK, lineHeight: 1.05, letterSpacing: "-0.025em", maxWidth: 820, marginBottom: 36 }}>
+          <h1 style={{ fontSize: "clamp(3rem, 6.5vw, 5.5rem)", color: INK, lineHeight: 1.05, letterSpacing: "-0.03em", fontWeight: 500, maxWidth: 820, marginBottom: 36 }}>
             Muudame seadused{" "}
             <span style={{ fontStyle: "italic", color: ACCENT }}>infrastruktuuriks.</span>
           </h1>
@@ -196,7 +192,7 @@ export default function Page() {
               { n: "50+", l: "riiki plaanitud kaetuse alla 2030. aastaks" },
             ].map((s, i) => (
               <div key={i}>
-                <div style={{ ...SERIF, fontSize: "3rem", color: ACCENT, lineHeight: 1, marginBottom: 8 }}>{s.n}</div>
+                <div style={{ fontSize: "2.8rem", fontWeight: 500, letterSpacing: "-0.03em", color: ACCENT, lineHeight: 1, marginBottom: 8 }}>{s.n}</div>
                 <div style={{ fontSize: "0.82rem", color: MUTED, lineHeight: 1.55 }}>{s.l}</div>
               </div>
             ))}
@@ -231,7 +227,7 @@ export default function Page() {
             <div>
               <Box accent>
                 <p style={{ fontSize: 11, letterSpacing: "0.1em", textTransform: "uppercase", color: ACCENT, marginBottom: 12 }}>Ühe lause missioon</p>
-                <p style={{ ...SERIF, fontSize: "1.15rem", color: INK, lineHeight: 1.55, fontStyle: "italic" }}>
+                <p style={{ fontSize: "1rem", color: INK, lineHeight: 1.7 }}>
                   Muuta seadused arusaadavaks ja koheselt kasutatavaks igale inimesele ja
                   ettevotele - kiiremini, odavamalt ja täpsemini kui ükski jurist suudaks.
                 </p>
@@ -315,7 +311,7 @@ export default function Page() {
                 { n: "04", t: "Interdistsiplinaarne tiim", d: "Juristi ja arendaja tihe koostöö - keda on aastatega keeruline järgi jäljendada." },
               ].map((m, i) => (
                 <div key={i} style={{ padding: "24px 20px", background: "#FFFFFF", borderLeft: i > 0 ? `1px solid ${RULE}` : "none" }}>
-                  <div style={{ ...SERIF, fontSize: "2rem", color: RULE, marginBottom: 14, lineHeight: 1 }}>{m.n}</div>
+                  <div style={{ fontSize: "1.5rem", fontWeight: 500, color: RULE, marginBottom: 14, lineHeight: 1, letterSpacing: "-0.02em" }}>{m.n}</div>
                   <p style={{ fontSize: "0.83rem", fontWeight: 500, color: INK, marginBottom: 8 }}>{m.t}</p>
                   <p style={{ fontSize: "0.8rem", color: MUTED, lineHeight: 1.65 }}>{m.d}</p>
                 </div>
@@ -414,7 +410,7 @@ export default function Page() {
           <div style={{ marginTop: 48 }}>
             <Box accent>
               <p style={{ fontSize: 11, letterSpacing: "0.1em", textTransform: "uppercase", color: ACCENT, marginBottom: 12 }}>#1 Prioriteet sel aastal</p>
-              <p style={{ ...SERIF, fontSize: "1.2rem", color: INK, lineHeight: 1.55, fontStyle: "italic" }}>
+              <p style={{ fontSize: "1rem", color: INK, lineHeight: 1.7 }}>
                 Ehitada kõige täpsem AI-põhine oiguse otsinguplatvorm Baltikumis - mida
                 mõõdetakse vastuste täpsuse, kasutajate usalduse ja B2B klientide arvu järgi.
               </p>
@@ -530,7 +526,7 @@ export default function Page() {
                 <p style={{ fontSize: 11, letterSpacing: "0.1em", textTransform: "uppercase", color: p.featured ? ACCENT : MUTED, marginBottom: 4 }}>{p.sub}</p>
                 <p style={{ fontSize: "0.8rem", fontWeight: 500, color: INK, marginBottom: 16 }}>{p.seg}</p>
                 <div style={{ marginBottom: 20 }}>
-                  <span style={{ ...SERIF, fontSize: "2.4rem", color: p.featured ? ACCENT : INK, lineHeight: 1 }}>{p.price}</span>
+                  <span style={{ fontSize: "2.2rem", fontWeight: 500, letterSpacing: "-0.03em", color: p.featured ? ACCENT : INK, lineHeight: 1 }}>{p.price}</span>
                   <span style={{ fontSize: "0.78rem", color: MUTED, marginLeft: 5 }}>/ {p.unit}</span>
                 </div>
                 <div style={{ display: "flex", flexDirection: "column", gap: 8, borderTop: `1px solid ${RULE}`, paddingTop: 16 }}>
@@ -570,7 +566,7 @@ export default function Page() {
               </P>
               <Box accent>
                 <p style={{ fontSize: 11, letterSpacing: "0.1em", textTransform: "uppercase", color: ACCENT, marginBottom: 10 }}>Visioon 2030</p>
-                <p style={{ ...SERIF, fontSize: "1.05rem", color: INK, lineHeight: 1.6, fontStyle: "italic" }}>
+                <p style={{ fontSize: "1rem", color: INK, lineHeight: 1.7 }}>
                   Legatron on maailma juhtiv AI-oiguse platvorm, mis katab üle 50 riigi
                   seadused ja töötleb miljoneid küsimusi päevas.
                 </p>
@@ -587,7 +583,7 @@ export default function Page() {
                   { n: "5", t: "Andmestiku pidev täiendamine seadusemuudatuste korral" },
                 ].map((s, i) => (
                   <div key={i} style={{ display: "flex", gap: 16, padding: "14px 0", borderBottom: `1px solid ${RULE}`, alignItems: "flex-start" }}>
-                    <span style={{ ...SERIF, fontSize: "1.1rem", color: ACCENT, lineHeight: 1, flexShrink: 0, marginTop: 2 }}>{s.n}</span>
+                    <span style={{ fontSize: "0.875rem", fontWeight: 500, color: ACCENT, lineHeight: 1, flexShrink: 0, marginTop: 3 }}>{s.n}</span>
                     <span style={{ fontSize: "0.875rem", color: "#333", lineHeight: 1.65 }}>{s.t}</span>
                   </div>
                 ))}
@@ -645,15 +641,14 @@ export default function Page() {
       {/* ═══ NARRATIIV / CTA ═════════════════════ */}
       <section style={{ paddingTop: 120, paddingBottom: 120 }}>
         <div style={{ ...WRAP, textAlign: "center" }}>
-          <Logo s={32} />
-          <h2 style={{ ...SERIF, fontSize: "clamp(2.4rem,5vw,4.5rem)", color: INK, lineHeight: 1.1, letterSpacing: "-0.02em", margin: "40px 0 24px", maxWidth: 660, marginLeft: "auto", marginRight: "auto" }}>
+          <h2 style={{ fontSize: "clamp(2.2rem,5vw,4rem)", fontWeight: 500, letterSpacing: "-0.03em", color: INK, lineHeight: 1.1, marginBottom: 24, maxWidth: 620, marginLeft: "auto", marginRight: "auto" }}>
             Seadused ei pea olema{" "}
-            <span style={{ fontStyle: "italic", color: ACCENT }}>keerulised.</span>
+            <span style={{ color: ACCENT }}>keerulised.</span>
           </h2>
           <p style={{ fontSize: "1rem", color: MUTED, marginBottom: 12, lineHeight: 1.7 }}>
             Legatron muudab need arusaadavaks.
           </p>
-          <p style={{ ...SERIF, fontSize: "1rem", color: MUTED, fontStyle: "italic", marginBottom: 56 }}>
+          <p style={{ fontSize: "0.875rem", color: MUTED, marginBottom: 56 }}>
             We win because we turn law into infrastructure.
           </p>
 
