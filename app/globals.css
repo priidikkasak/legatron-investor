@@ -1,19 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500&display=swap');
 @import "tailwindcss";
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; font-size: 16px; }
+html { scroll-behavior: smooth; }
 
 body {
-  background: #0A0C14;
-  color: #C8C8C8;
-  font-family: 'DM Sans', system-ui, sans-serif;
+  background: #FAFAF8;
+  color: #111111;
+  font-family: 'Inter', system-ui, sans-serif;
   font-weight: 300;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
-::selection { background: rgba(201,152,42,0.2); }
+::selection { background: rgba(180, 120, 20, 0.15); }
 ::-webkit-scrollbar { width: 2px; }
-::-webkit-scrollbar-thumb { background: rgba(201,152,42,0.25); }
+::-webkit-scrollbar-thumb { background: #D0C8BB; }
