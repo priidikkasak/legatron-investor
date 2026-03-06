@@ -162,7 +162,7 @@ export default function Page() {
   return (
     <div style={{ background: C.bg, color: C.text }}>
       <style>{`
-        .stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; }
+        .stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 48px; }
         .col2 { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; }
         .col3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 40px; }
         .col4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
@@ -191,9 +191,9 @@ export default function Page() {
       <nav style={{ position: "fixed", top: 0, left: 0, right: 0, zIndex: 50, background: "rgba(8,8,8,0.92)", backdropFilter: "blur(24px)" }}>
         <div className="wrap-pad" style={{ ...WRAP, height: 60, display: "flex", alignItems: "center", justifyContent: "space-between" }}>
           <div style={{ display: "flex", alignItems: "center", gap: 13 }}>
-            <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
-              <rect x="0" y="0" width="13" height="13" fill={C.white} fillOpacity="0.9" />
-              <rect x="16" y="17" width="14" height="13" fill={C.gold} />
+            <svg width="32" height="32" viewBox="0 0 30 30" fill="none">
+              <rect x="0" y="0" width="18" height="18" fill={C.white} />
+              <rect x="12" y="12" width="18" height="18" fill={C.gold} />
             </svg>
             <span style={{ fontSize: "1.25rem", fontFamily: "'DM Serif Display', Georgia, serif", fontWeight: 400, color: C.white, letterSpacing: "0.01em", lineHeight: 1 }}>Legatron</span>
           </div>
@@ -231,15 +231,15 @@ export default function Page() {
             </a>
           </div>
 
-          <div className="stats-grid" style={{ borderTop: `1px solid ${C.border}`, paddingTop: 52 }}>
+          <div className="stats-grid" style={{ marginTop: 80 }}>
             {[
               { n: "€300 mld", l: "Euroopa juriidiliste teenuste turg aastas", gold: true },
               { n: "10×",      l: "odavam ja kiirem kui traditsiooniline jurist", gold: false },
               { n: "50+",      l: "riiki plaanitud kaetuse alla 2030. aastaks", gold: false },
             ].map((s, i) => (
-              <div key={i}>
-                <div style={{ fontSize: "clamp(2.4rem, 4vw, 3.5rem)", fontWeight: 600, letterSpacing: "-0.04em", color: s.gold ? C.gold : C.white, lineHeight: 1, marginBottom: 10 }}>{s.n}</div>
-                <div style={{ fontSize: "0.82rem", fontWeight: 300, color: C.muted, lineHeight: 1.55 }}>{s.l}</div>
+              <div key={i} style={{ borderTop: `1px solid ${s.gold ? C.gold : C.border}`, paddingTop: 24 }}>
+                <div style={{ fontSize: "clamp(2.4rem, 4vw, 3.5rem)", fontWeight: 600, letterSpacing: "-0.04em", color: s.gold ? C.gold : C.white, lineHeight: 1, marginBottom: 12 }}>{s.n}</div>
+                <div style={{ fontSize: "0.82rem", fontWeight: 300, color: C.muted, lineHeight: 1.6 }}>{s.l}</div>
               </div>
             ))}
           </div>
