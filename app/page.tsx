@@ -166,9 +166,9 @@ export default function Page() {
       <nav style={{ position: "fixed", top: 0, left: 0, right: 0, zIndex: 50, background: "rgba(8,8,8,0.92)", backdropFilter: "blur(24px)" }}>
         <div style={{ ...WRAP, height: 60, display: "flex", alignItems: "center", justifyContent: "space-between" }}>
           <div style={{ display: "flex", alignItems: "center", gap: 13 }}>
-            <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
-              <rect x="0" y="0" width="14" height="14" fill={C.white} />
-              <rect x="12" y="12" width="14" height="14" fill={C.gold} />
+            <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
+              <rect x="0" y="0" width="13" height="13" fill={C.white} fillOpacity="0.9" />
+              <rect x="16" y="17" width="14" height="13" fill={C.gold} />
             </svg>
             <span style={{ fontSize: "1.25rem", fontFamily: "'DM Serif Display', Georgia, serif", fontWeight: 400, color: C.white, letterSpacing: "0.01em", lineHeight: 1 }}>Legatron</span>
           </div>
