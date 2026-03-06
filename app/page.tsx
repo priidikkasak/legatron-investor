@@ -218,13 +218,13 @@ export default function Page() {
           </h1>
 
           <p style={{ fontSize: "1.05rem", fontWeight: 300, color: C.dim, lineHeight: 1.82, maxWidth: 480, marginBottom: 44 }}>
-            AI-põhine platvorm, mis teeb oiguse ligipääsetavaks igale inimesele ja
-            ettevotele - kiiremini, odavamalt ja täpsemini kui ükski jurist suudaks.
+            AI-põhine platvorm, mis teeb õiguse ligipääsetavaks igale inimesele ja
+            ettevõttele - kiiremini, odavamalt ja täpsemini kui ükski jurist suudaks.
           </p>
 
           <div style={{ display: "flex", gap: 12, alignItems: "center", marginBottom: 100 }}>
             <a href="#missioon" style={{ background: C.white, color: C.bg, fontSize: "0.84rem", fontWeight: 600, letterSpacing: "0.01em", padding: "12px 26px", borderRadius: 10, textDecoration: "none" }}>
-              Vaata ariplaan
+              Vaata äriplaan
             </a>
             <a href="#kkk" style={{ fontSize: "0.84rem", fontWeight: 300, color: C.dim, textDecoration: "none", padding: "12px 4px" }}>
               Investori KKK →
@@ -254,14 +254,14 @@ export default function Page() {
             <div>
               <H2>Miks maailm vajab Legatroni?</H2>
               <Sub>
-                Tänapäeva oigussüsteem on üles ehitatud asjatundjate jaoks, mitte tavaliste
-                inimeste jaoks. Väikeettevotja, kes soovib teada, kas ta võib töötajat
+                Tänapäeva õigussüsteem on üles ehitatud asjatundjate jaoks, mitte tavaliste
+                inimeste jaoks. Väikeettevõtja, kes soovib teada, kas ta võib töötajat
                 koondada, peab maksma juristile 150-400 € tunni kohta - ja ootama päevi
                 vastust, mis on vaja juba täna.
               </Sub>
               <Sub>
                 Eraisik, kes sõlmib lepingut, ei tea sageli, millised riskid see endas peidab.
-                Legatron struktureerib seadused, kohtulahendid ja oigusnormid ning muudab
+                Legatron struktureerib seadused, kohtulahendid ja õigusnormid ning muudab
                 need sekunditega otsinguks kättesaadavaks.
               </Sub>
             </div>
@@ -269,16 +269,16 @@ export default function Page() {
               <Highlight label="Ühe lause missioon">
                 <p style={{ fontSize: "1rem", fontWeight: 300, color: C.text, lineHeight: 1.82 }}>
                   Muuta seadused arusaadavaks ja koheselt kasutatavaks igale inimesele ja
-                  ettevotele - kiiremini, odavamalt ja täpsemini kui ükski jurist suudaks.
+                  ettevõttele - kiiremini, odavamalt ja täpsemini kui ükski jurist suudaks.
                 </p>
               </Highlight>
               <div>
                 <ColLabel>Mida kaotaks maailm ilma Legatronita</ColLabel>
                 <BulletList items={[
                   "Lepingutel põhinevad vaidlused, mida oleks saanud vältida",
-                  "Trahvid regulatsiooninouete mittetäitmise eest",
-                  "Otsused, mis põhinevad valedel eeldustel oigusliku vastutuse kohta",
-                  "Ressursside raiskamine teenustele, mis on väikeettevotjatele taskukohatud",
+                  "Trahvid regulatsiooninõuete mittetäitmise eest",
+                  "Otsused, mis põhinevad valedel eeldustel õigusliku vastutuse kohta",
+                  "Ressursside raiskamine teenustele, mis on väikeettevõtjatele taskukohatud",
                 ]} />
               </div>
             </div>
@@ -295,7 +295,7 @@ export default function Page() {
               <H2>10× parem kui praegune alternatiiv</H2>
               <Sub>
                 Seadus ise ei ole probleem - probleem on selle ligipääsetavus. Kui seadused
-                struktureerida oigesti ning ühendada AI-mudelitega, saab oigusest reaalajas
+                struktureerida õigesti ning ühendada AI-mudelitega, saab õigusest reaalajas
                 kasutatav infrastruktuur, nagu on internet ühenduvuse jaoks.
               </Sub>
               <div style={{ marginTop: 28 }}>
@@ -303,7 +303,7 @@ export default function Page() {
                 <DataTable
                   cols={["Valdkond", "Seis"]}
                   rows={[
-                    ["Eesti oiguse struktureerimine", "Aktiivne - pohiseadused kaetud"],
+                    ["Eesti õiguse struktureerimine", "Aktiivne - põhiseadused kaetud"],
                     ["AI-põhine seaduse otsing",      "MVP käivitamiseks valmis"],
                     ["Juristi valideeritud vastused",  "Protsess paika pandud"],
                     ["Riigikohtu lahendite analüüs",  "Integratsioon arenduses"],
@@ -332,8 +332,8 @@ export default function Page() {
             <div className="moat4" style={{ gap: 1 }}>
               {[
                 { n: "01", t: "Struktureeritud andmebaas",  d: "Aastatepikkune töö seaduste, kohtulahendite ja regulatsioonide kategoriseerimiseks riigi- ja valdkonnapõhiselt." },
-                { n: "02", t: "Juristi valideeritud sisu",  d: "Iga oiguslik väide on inimekspert üle kontrollinud - täpsust, mida puhta AI korral ei saavutata." },
-                { n: "03", t: "Riigipõhine AI treening",    d: "Mudel treenitud konkreetse riigi oiguslikule kontekstile - tunduvalt parem täpsus kui üldmudelitel." },
+                { n: "02", t: "Juristi valideeritud sisu",  d: "Iga õiguslik väide on inimekspert üle kontrollinud - täpsust, mida puhta AI korral ei saavutata." },
+                { n: "03", t: "Riigipõhine AI treening",    d: "Mudel treenitud konkreetse riigi õiguslikule kontekstile - tunduvalt parem täpsus kui üldmudelitel." },
                 { n: "04", t: "Interdistsiplinaarne tiim",  d: "Juristi ja arendaja tihe koostöö - kombinatsioon, keda on aastatega keeruline järgi jäljendada." },
               ].map((m, i) => (
                 <div key={i} style={{ background: C.surf, padding: "24px 22px" }}>
@@ -367,10 +367,10 @@ export default function Page() {
                 <ColLabel>Turu laienemine</ColLabel>
                 <DataTable
                   rows={[
-                    [<span style={{ color: C.gold, fontWeight: 400 }}>Faas 1 — 2024</span>,     "Eesti MVP - digitaalne ühiskond, avalik andmestik"],
-                    ["Faas 2 — 2025 Q1-Q2",                                                      "Baltikum - Läti ja Leedu, sarnane oiguslik struktuur"],
-                    ["Faas 3 — 2025 Q3-Q4",                                                      "Euroopa - DE, FI, NL, selged andmestikud"],
-                    ["Faas 4 — 2026+",                                                            "Globaalne laienemine, API ärimudel, Enterprise"],
+                    [<span style={{ color: C.gold, fontWeight: 400 }}>Faas 1 - 2024</span>,     "Eesti MVP - digitaalne ühiskond, avalik andmestik"],
+                    ["Faas 2 - 2025 Q1-Q2",                                                      "Baltikum - Läti ja Leedu, sarnane õiguslik struktuur"],
+                    ["Faas 3 - 2025 Q3-Q4",                                                      "Euroopa - DE, FI, NL, selged andmestikud"],
+                    ["Faas 4 - 2026+",                                                            "Globaalne laienemine, API ärimudel, Enterprise"],
                   ]}
                 />
               </div>
@@ -379,8 +379,8 @@ export default function Page() {
               <H2>Sihtgrupid</H2>
               <div style={{ display: "flex", flexDirection: "column", gap: 10, marginBottom: 28 }}>
                 {[
-                  { t: "Eraisik",                    s: "Projektipõhine kasutus",   d: "Vajab vastust konkreetsele küsimusele - üürileping, tööoigus, tarbijakaitse. Kiire, täpne, taskukohane." },
-                  { t: "Väike ja Keskmine Ettevote", s: "Igapäevane oiguslik tugi", d: "Töölepingud, kliendisuhted, regulatsioonid. Korduvad küsimused kiirelt, ilma juristi ooteajata." },
+                  { t: "Eraisik",                    s: "Projektipõhine kasutus",   d: "Vajab vastust konkreetsele küsimusele - üürileping, tööõigus, tarbijakaitse. Kiire, täpne, taskukohane." },
+                  { t: "Väike ja Keskmine Ettevote", s: "Igapäevane õiguslik tugi", d: "Töölepingud, kliendisuhted, regulatsioonid. Korduvad küsimused kiirelt, ilma juristi ooteajata." },
                 ].map((sg, i) => (
                   <div key={i} style={{ background: C.surf2, border: `1px solid ${C.border}`, borderRadius: 10, padding: "20px 22px" }}>
                     <p style={{ ...LBL, marginBottom: 8 }}>{sg.s}</p>
@@ -429,7 +429,7 @@ export default function Page() {
           <div style={{ marginTop: 56 }}>
             <Highlight label="#1 Prioriteet sel aastal">
               <p style={{ fontSize: "1.05rem", fontWeight: 300, color: C.text, lineHeight: 1.82 }}>
-                Ehitada kõige täpsem AI-põhine oiguse otsinguplatvorm Baltikumis - mida
+                Ehitada kõige täpsem AI-põhine õiguse otsinguplatvorm Baltikumis - mida
                 mõõdetakse vastuste täpsuse, kasutajate usalduse ja B2B klientide arvu järgi.
               </p>
             </Highlight>
@@ -441,7 +441,7 @@ export default function Page() {
               cols={["Kitsaskoht", "Lahendus"]}
               widths={["45%", "55%"]}
               rows={[
-                ["Oiguse andmete struktureerimine on aeganoudev", "Juristi-juhitud valideerimisprotsess koos AI abistamisega"],
+                ["Oiguse andmete struktureerimine on aeganõudev", "Juristi-juhitud valideerimisprotsess koos AI abistamisega"],
                 ["AI täpsus on kriitilise tähtsusega",            "Pidev mudeli treenimine, A/B testimine, feedback loop"],
                 ["Kasutajate usaldus uue platvormi vastu",        "Läbipaistvus: allikad nähtavad, jurist tagab täpsuse"],
               ]}
@@ -461,7 +461,7 @@ export default function Page() {
               <DataTable
                 cols={["Kvartal", "Eesmärk"]}
                 rows={[
-                  [<span style={{ color: C.gold, fontWeight: 400 }}>Q1</span>, "Eesti MVP launch - pohiseadused, Riigikohtu lahendid"],
+                  [<span style={{ color: C.gold, fontWeight: 400 }}>Q1</span>, "Eesti MVP launch - põhiseadused, Riigikohtu lahendid"],
                   ["Q2", "Baltikumi laienemine - Läti, Leedu, 3 B2B klienti"],
                   ["Q3", "Euroopa piloot - DE/FI/NL, API beetaversioon"],
                   ["Q4", "10 000 aktiivsed kasutajad, Enterprise klient"],
@@ -474,8 +474,8 @@ export default function Page() {
                 cols={["Kuu", "Vahe-eesmärk"]}
                 rows={[
                   [<span style={{ color: C.gold, fontWeight: 400 }}>1</span>, "MVP launch, Eesti seadused, 100 kasutajat"],
-                  ["2", "1 000 kasutajat, NPS mootmine (eesmärk: >50)"],
-                  ["3", "B2B subscription müük, 3+ ettevote katseperioodil"],
+                  ["2", "1 000 kasutajat, NPS mõõtmine (eesmärk: >50)"],
+                  ["3", "B2B subscription müük, 3+ ettevõtte katseperioodil"],
                 ]}
               />
             </div>
@@ -503,7 +503,7 @@ export default function Page() {
               <H2>Toote teekond</H2>
               <Sub>Viis selget versioonitasandit - iga järgnev avab uue tuluvoo ja suurendab kasutajate haaret.</Sub>
               <div style={{ marginTop: 28 }}>
-                <Highlight label="V1 — Launchitav MVP">
+                <Highlight label="V1 - Launchitav MVP">
                   <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "8px 0" }}>
                     {["Kõik Eesti kehtivad seadused", "Automaatne uuendus muudatuste korral", "Riigikohtu lahendid", "AI-põhine otsing", "Seaduseviited iga vastuse juures", "Lihtne keeleline selgitus"].map((f, i) => (
                       <div key={i} style={{ display: "flex", gap: 8, alignItems: "center" }}>
@@ -542,7 +542,7 @@ export default function Page() {
           <div className="col4" style={{ marginTop: 40, marginBottom: 56 }}>
             {[
               { sub: "Projektipõhine", seg: "Eraisik",    price: "€29",     unit: "küsimus", items: ["Üks detailne vastus", "Seaduseviited ja kohtulahendid", "Praktilised järgmised sammud"] },
-              { sub: "Subscription",  seg: "VKE",         price: "€49",     unit: "kuu",     featured: true,  items: ["Piiramatu küsimuste arv", "Kõik oigusvaldkonnad", "Dokumendianalüüs", "Kuni 50 töötajaga ettevoted"] },
+              { sub: "Subscription",  seg: "VKE",         price: "€49",     unit: "kuu",     featured: true,  items: ["Piiramatu küsimuste arv", "Kõik õigusvaldkonnad", "Dokumendianalüüs", "Kuni 50 töötajaga ettevõtted"] },
               { sub: "Premium",       seg: "Ettevote",    price: "€199",    unit: "kuu",     items: ["Kõik VKE eelised", "Lepingugeneraator", "Riskianalüüs soovitustega", "Prioriteetne tugi"] },
               { sub: "B2B Custom",    seg: "Enterprise",  price: "€1k-10k", unit: "kuu",     items: ["API integratsioon", "SLA-garantiid", "Rahvusvaheline laienemine"] },
             ].map((p, i) => <PricingCard key={i} {...p} />)}
@@ -570,13 +570,13 @@ export default function Page() {
               <H2>Oiguse infrastruktuur maailmale</H2>
               <Sub>
                 Legatron ei ehita lihtsalt tööriista. Pikaajaline visioon on saada maailma
-                esimeseks riikideüleseks oiguse infrastruktuurisüsteemiks - süsteemiks,
-                mille kaudu ettevotted ja eraisikud saavad teha kõik juriidilised otsused
+                esimeseks riikideüleseks õiguse infrastruktuurisüsteemiks - süsteemiks,
+                mille kaudu ettevõtted ja eraisikud saavad teha kõik juriidilised otsused
                 ükskõik millises riigis.
               </Sub>
               <Highlight label="Visioon 2030">
                 <p style={{ fontSize: "1rem", fontWeight: 300, color: C.text, lineHeight: 1.82 }}>
-                  Legatron on maailma juhtiv AI-oiguse platvorm, mis katab üle 50 riigi
+                  Legatron on maailma juhtiv AI-õiguse platvorm, mis katab üle 50 riigi
                   seadused ja töötleb miljoneid küsimusi päevas.
                 </p>
               </Highlight>
@@ -588,7 +588,7 @@ export default function Page() {
                 widths={["12%", "88%"]}
                 rows={[
                   ["1", "Siseneme riiki, kus on avalik ja struktureeritud seaduste andmestik"],
-                  ["2", "Partnerlusjurist lokaalse oiguse valideerimiseks"],
+                  ["2", "Partnerlusjurist lokaalse õiguse valideerimiseks"],
                   ["3", "AI mudeli treenimine riigi-spetsiifilisele kontekstile"],
                   ["4", "Launch kohaliku meedia ja juriidikakogukonnaga"],
                   ["5", "Andmestiku pidev täiendamine seadusemuudatuste korral"],
@@ -600,9 +600,9 @@ export default function Page() {
                   cols={["Stsenaarium", "Legatroni lahendus"]}
                   widths={["50%", "50%"]}
                   rows={[
-                    ["Eesti ettevote soovib eksportida Slovakkiasse",  "Maksueeskirjad, toodete regulatsioonid - koheselt"],
+                    ["Eesti ettevõte soovib eksportida Slovakkiasse",  "Maksueeskirjad, toodete regulatsioonid - koheselt"],
                     ["Eraisik reisib ja töötab Hispaanias",            "Töötamine, elamisluba, tarbijaõigus - ühes kohas"],
-                    ["Startup asutab firma Saksamaal",                 "GmbH nouded, tööoigus, andmekaitse"],
+                    ["Startup asutab firma Saksamaal",                 "GmbH nõuded, tööõigus, andmekaitse"],
                     ["Pank kontrollib vastavust EL-i direktiivile",    "Automaatne regulatsioonikaart"],
                   ]}
                 />
@@ -627,14 +627,14 @@ export default function Page() {
             <div>
               <div style={{ borderTop: `1px solid ${C.border}` }}>
                 {[
-                  { q: "Miks just nüüd?",                               a: "AI mudelite võimekus on 2023-2024 jooksul joudnud tasemele, kus struktureeritud oiguse andmestik koos keelemudeliga annab usaldusväärseid ja viidatavaid vastuseid. Varem polnud täpsus piisav, et turule minna vastutustundlikult." },
+                  { q: "Miks just nüüd?",                               a: "AI mudelite võimekus on 2023-2024 jooksul jõudnud tasemele, kus struktureeritud õiguse andmestik koos keelemudeliga annab usaldusväärseid ja viidatavaid vastuseid. Varem polnud täpsus piisav, et turule minna vastutustundlikult." },
                   { q: "Miks alustada Eestist?",                        a: "Eesti on väike (1,4 mln), kõrgelt digitaliseeritud ja omab selget ning avalikult kättesaadavat seaduste andmebaasi (Riigi Teataja). See võimaldab kiiresti itereerida ja mudeli täpsust tõestada enne laiemat sisenemist." },
                   { q: "Kui suureks saab see kasvada?",                 a: "Euroopa juriidiliste teenuste turg on hinnanguliselt üle 300 miljardi euro aastas. Isegi 0,1% sellest turust tähendab 300 mln € käivet. LegalTech kui AI vertikaali kasvutempo ületab üldist SaaS-i kasvu märkimisväärselt." },
                   { q: "Mis takistab konkurente?",                      a: "Struktureeritud ja juristi-valideeritud riigipõhine andmestik on aastatepikkune töö. Üldised AI mudelid (ChatGPT jt) ei suuda seda asendada - neil puudub täpsus, viited ja lokaalne kontekst. Varajane positsioon loob võrgustikeefekti." },
                   { q: "Kuidas skaaleerimine rahvusvaheliselt toimib?", a: "Iga riik on eraldi moodul: seadused - lokaliseerimine - AI treenimine - launch. Mudel on korratav. Pärast kolme esimest riiki on protsess automatiseeritud ja kiiremat laienemist toetab API ärimudel." },
-                  { q: "Kas seadused saavad API-ks?",                        a: "Jah. V3-V4 ajaks pakume API-t, mille kaudu ettevotted saavad oma rakendustes pärida konkreetseid seaduseviiteid, regulatiivseid noueid ja riskihinnanguid. See avab uue B2B tuluvoo." },
-                  { q: "Kas Legatron võib olla oiguse operatsioonisüsteem?", a: "See on meie pikaajaline visioon. Ettevotted teevad kõik juriidilised otsused - lepingud, riskianalüüsid, regulatsioonikontroll - Legatroni kaudu, ilma et neil oleks vaja juristi kaasata rutiinsetes küsimustes." },
-                  { q: "Kas oigus on järgmine suur AI vertikaali?",          a: "Koos tervishoiu, finantsteenuste ja haridusega on oigus üks maailma suurimaid teenussektoreid. Seadusandlik andmestik on avalik ja struktureeritud, mis muudab AI rakendamise kiiremaks kui teistes sektorites." },
+                  { q: "Kas seadused saavad API-ks?",                        a: "Jah. V3-V4 ajaks pakume API-t, mille kaudu ettevõtted saavad oma rakendustes pärida konkreetseid seaduseviiteid, regulatiivseid nõudeid ja riskihinnanguid. See avab uue B2B tuluvoo." },
+                  { q: "Kas Legatron võib olla õiguse operatsioonisüsteem?", a: "See on meie pikaajaline visioon. Ettevotted teevad kõik juriidilised otsused - lepingud, riskianalüüsid, regulatsioonikontroll - Legatroni kaudu, ilma et neil oleks vaja juristi kaasata rutiinsetes küsimustes." },
+                  { q: "Kas õigus on järgmine suur AI vertikaali?",          a: "Koos tervishoiu, finantsteenuste ja haridusega on õigus üks maailma suurimaid teenussektoreid. Seadusandlik andmestik on avalik ja struktureeritud, mis muudab AI rakendamise kiiremaks kui teistes sektorites." },
                 ].map((item, i) => <FAQ key={i} {...item} />)}
               </div>
             </div>
@@ -657,8 +657,6 @@ export default function Page() {
           <a href="mailto:info@legatron.ai" style={{ display: "inline-block", background: C.white, color: C.bg, fontSize: "0.875rem", fontWeight: 600, padding: "14px 34px", borderRadius: 12, textDecoration: "none", marginBottom: 88 }}>
             info@legatron.ai
           </a>
-          <div style={{ height: 1, background: C.border, marginBottom: 28 }} />
-          <p style={{ ...LBL }}>© 2024 Legatron · Investor-taseme dokument · Konfidentsiaalne</p>
         </div>
       </section>
 
