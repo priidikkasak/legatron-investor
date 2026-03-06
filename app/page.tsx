@@ -27,15 +27,15 @@ const SEC  = (bg = C.bg): React.CSSProperties => ({ background: bg, padding: "12
 
 /* ── Primitives ─────────────────────────── */
 const SectionTag = ({ n, label }: { n: string; label: string }) => (
-  <div style={{ display: "flex", alignItems: "center", gap: 14, marginBottom: 64 }}>
-    <span style={{ ...LBL, color: C.muted }}>{n}</span>
-    <span style={{ width: 20, height: 1, background: C.border2 }} />
-    <span style={{ ...LBL }}>{label}</span>
+  <div style={{ display: "flex", alignItems: "center", gap: 16, marginBottom: 64 }}>
+    <span style={{ fontSize: 13, fontWeight: 500, letterSpacing: "0.12em", color: C.muted }}>{n}</span>
+    <span style={{ width: 24, height: 1, background: C.border2 }} />
+    <span style={{ fontSize: 13, fontWeight: 500, letterSpacing: "0.14em", textTransform: "uppercase", color: C.sub }}>{label}</span>
   </div>
 );
 
-const H2 = ({ children }: { children: React.ReactNode }) => (
-  <h2 style={{ fontSize: "clamp(1.75rem, 2.6vw, 2.25rem)", fontWeight: 500, letterSpacing: "-0.026em", color: C.white, lineHeight: 1.2, marginBottom: 20 }}>
+const H2 = ({ children, hide }: { children: React.ReactNode; hide?: boolean }) => (
+  <h2 className={hide ? "h2-hide" : ""} style={{ fontSize: "clamp(1.75rem, 2.6vw, 2.25rem)", fontWeight: 500, letterSpacing: "-0.026em", color: C.white, lineHeight: 1.2, marginBottom: 20 }}>
     {children}
   </h2>
 );
@@ -51,13 +51,14 @@ const ColLabel = ({ children }: { children: React.ReactNode }) => (
 );
 
 /* Boxed data table */
-const DataTable = ({ cols, rows, widths, accent }: {
+const DataTable = ({ cols, rows, widths, accent, scroll }: {
   cols?: string[];
   rows: (string | React.ReactNode)[][];
   widths?: string[];
-  accent?: number; // col index to highlight gold
+  accent?: number;
+  scroll?: boolean;
 }) => (
-  <div style={{ border: `1px solid ${C.border}`, borderRadius: 10, overflow: "hidden" }}>
+  <div className={scroll ? "tbl-wrap" : ""} style={{ border: `1px solid ${C.border}`, borderRadius: 10, overflow: "hidden" }}>
     <table style={{ width: "100%", borderCollapse: "collapse" }}>
       {cols && (
         <thead>
@@ -161,10 +162,35 @@ const FAQ = ({ q, a }: { q: string; a: string }) => {
 export default function Page() {
   return (
     <div style={{ background: C.bg, color: C.text }}>
+      <style>{`
+        .stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; }
+        .col2 { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; }
+        .col3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 40px; }
+        .col4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+        .moat4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: ${C.border}; border: 1px solid ${C.border}; border-radius: 10px; overflow: hidden; }
+        .nav-links { display: flex; gap: 32px; }
+        .tbl-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+        @media (max-width: 768px) {
+          .stats-grid { grid-template-columns: 1fr; gap: 40px; }
+          .col2 { grid-template-columns: 1fr; gap: 48px; }
+          .col3 { grid-template-columns: 1fr; gap: 40px; }
+          .col4 { grid-template-columns: 1fr 1fr; gap: 10px; }
+          .moat4 { grid-template-columns: 1fr 1fr; }
+          .nav-links { display: none; }
+          .section-pad { padding: 72px 0 !important; }
+          .wrap-pad { padding: 0 24px !important; }
+          .hero-pad { padding: 120px 0 80px !important; }
+          .h2-hide { display: none !important; }
+        }
+        @media (max-width: 480px) {
+          .col4 { grid-template-columns: 1fr; }
+          .moat4 { grid-template-columns: 1fr; }
+        }
+      `}</style>
 
       {/* NAV */}
       <nav style={{ position: "fixed", top: 0, left: 0, right: 0, zIndex: 50, background: "rgba(8,8,8,0.92)", backdropFilter: "blur(24px)" }}>
-        <div style={{ ...WRAP, height: 60, display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+        <div className="wrap-pad" style={{ ...WRAP, height: 60, display: "flex", alignItems: "center", justifyContent: "space-between" }}>
           <div style={{ display: "flex", alignItems: "center", gap: 13 }}>
             <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
               <rect x="0" y="0" width="13" height="13" fill={C.white} fillOpacity="0.9" />
@@ -172,7 +198,7 @@ export default function Page() {
             </svg>
             <span style={{ fontSize: "1.25rem", fontFamily: "'DM Serif Display', Georgia, serif", fontWeight: 400, color: C.white, letterSpacing: "0.01em", lineHeight: 1 }}>Legatron</span>
           </div>
-          <div style={{ display: "flex", gap: 32 }}>
+          <div className="nav-links">
             {["Lahendus", "Turg", "Toode", "Hinnad", "Visioon", "KKK"].map(l => (
               <a key={l} href={`#${l.toLowerCase()}`} style={{ fontSize: "0.8rem", fontWeight: 300, color: C.muted, textDecoration: "none" }}>{l}</a>
             ))}
@@ -184,14 +210,9 @@ export default function Page() {
       </nav>
 
       {/* ── HERO ─────────────────────────────── */}
-      <section style={{ padding: "164px 0 128px", background: C.bg, position: "relative", overflow: "hidden" }}>
+      <section className="hero-pad" style={{ padding: "164px 0 128px", background: C.bg, position: "relative", overflow: "hidden" }}>
         <div style={{ position: "absolute", top: 0, left: "50%", transform: "translateX(-50%)", width: 900, height: 500, background: `radial-gradient(ellipse at 50% 0%, rgba(201,152,26,0.07) 0%, transparent 70%)`, pointerEvents: "none" }} />
-        <div style={WRAP}>
-          <div style={{ display: "inline-flex", alignItems: "center", gap: 8, background: C.surf2, border: `1px solid ${C.border2}`, borderRadius: 999, padding: "5px 14px", marginBottom: 40 }}>
-            <span style={{ width: 5, height: 5, borderRadius: "50%", background: C.gold, display: "block" }} />
-            <span style={{ fontSize: "0.72rem", fontWeight: 400, color: C.dim, letterSpacing: "0.06em" }}>Investori dokument · Konfidentsiaalne · 2024</span>
-          </div>
-
+        <div className="wrap-pad" style={WRAP}>
           <h1 style={{ fontSize: "clamp(3.4rem, 6.8vw, 6.2rem)", fontWeight: 600, letterSpacing: "-0.036em", color: C.white, lineHeight: 1.0, maxWidth: 820, marginBottom: 28 }}>
             Muudame seadused{" "}
             <span style={{ color: C.gold }}>infrastruktuuriks.</span>
@@ -211,15 +232,15 @@ export default function Page() {
             </a>
           </div>
 
-          <div style={{ borderTop: `1px solid ${C.border}`, paddingTop: 52, display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 0 }}>
+          <div className="stats-grid" style={{ borderTop: `1px solid ${C.border}`, paddingTop: 52 }}>
             {[
               { n: "€300 mld", l: "Euroopa juriidiliste teenuste turg aastas", gold: true },
               { n: "10×",      l: "odavam ja kiirem kui traditsiooniline jurist", gold: false },
               { n: "50+",      l: "riiki plaanitud kaetuse alla 2030. aastaks", gold: false },
             ].map((s, i) => (
-              <div key={i} style={{ paddingRight: 40 }}>
+              <div key={i}>
                 <div style={{ fontSize: "clamp(2.4rem, 4vw, 3.5rem)", fontWeight: 600, letterSpacing: "-0.04em", color: s.gold ? C.gold : C.white, lineHeight: 1, marginBottom: 10 }}>{s.n}</div>
-                <div style={{ fontSize: "0.82rem", fontWeight: 300, color: C.muted, lineHeight: 1.55, maxWidth: 200 }}>{s.l}</div>
+                <div style={{ fontSize: "0.82rem", fontWeight: 300, color: C.muted, lineHeight: 1.55 }}>{s.l}</div>
               </div>
             ))}
           </div>
@@ -227,10 +248,10 @@ export default function Page() {
       </section>
 
       {/* ── 01 MISSIOON ──────────────────────── */}
-      <section id="missioon" style={SEC(C.bg)}>
-        <div style={WRAP}>
+      <section id="missioon" className="section-pad" style={SEC(C.bg)}>
+        <div className="wrap-pad" style={WRAP}>
           <SectionTag n="01" label="Missioon" />
-          <div style={GRID2}>
+          <div className="col2">
             <div>
               <H2>Miks maailm vajab Legatroni?</H2>
               <Sub>
@@ -267,10 +288,10 @@ export default function Page() {
       </section>
 
       {/* ── 02 KONKURENTSIEELIS ──────────────── */}
-      <section id="lahendus" style={SEC(C.bg)}>
-        <div style={WRAP}>
+      <section id="lahendus" className="section-pad" style={SEC(C.bg)}>
+        <div className="wrap-pad" style={WRAP}>
           <SectionTag n="02" label="Konkurentsieelis" />
-          <div style={GRID2}>
+          <div className="col2">
             <div>
               <H2>10× parem kui praegune alternatiiv</H2>
               <Sub>
@@ -309,7 +330,7 @@ export default function Page() {
 
           <div style={{ marginTop: 72 }}>
             <ColLabel>Meid on raske kopeerida</ColLabel>
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 1, background: C.border, border: `1px solid ${C.border}`, borderRadius: 10, overflow: "hidden" }}>
+            <div className="moat4" style={{ gap: 1 }}>
               {[
                 { n: "01", t: "Struktureeritud andmebaas",  d: "Aastatepikkune töö seaduste, kohtulahendite ja regulatsioonide kategoriseerimiseks riigi- ja valdkonnapõhiselt." },
                 { n: "02", t: "Juristi valideeritud sisu",  d: "Iga oiguslik väide on inimekspert üle kontrollinud - täpsust, mida puhta AI korral ei saavutata." },
@@ -328,10 +349,10 @@ export default function Page() {
       </section>
 
       {/* ── 03 TURG ──────────────────────────── */}
-      <section id="turg" style={SEC(C.bg)}>
-        <div style={WRAP}>
+      <section id="turg" className="section-pad" style={SEC(C.bg)}>
+        <div className="wrap-pad" style={WRAP}>
           <SectionTag n="03" label="Turg" />
-          <div style={GRID2}>
+          <div className="col2">
             <div>
               <H2>Suur turg, selge tee sisse</H2>
               <Sub>
@@ -382,10 +403,10 @@ export default function Page() {
       </section>
 
       {/* ── 04 STRATEEGIA ────────────────────── */}
-      <section id="strateegia" style={SEC(C.bg)}>
-        <div style={WRAP}>
+      <section id="strateegia" className="section-pad" style={SEC(C.bg)}>
+        <div className="wrap-pad" style={WRAP}>
           <SectionTag n="04" label="Strateegilised valikud" />
-          <div style={GRID2}>
+          <div className="col2">
             <div>
               <H2>Mida teeme - ja mida mitte</H2>
               <ColLabel>Teeme ALATI</ColLabel>
@@ -396,7 +417,7 @@ export default function Page() {
               ]} />
             </div>
             <div>
-              <H2>&nbsp;</H2>
+              <H2 hide>Printsiibid</H2>
               <ColLabel>Ei tee KUNAGI</ColLabel>
               <BulletList items={[
                 "Ei anna kontrollimata informatsiooni - kõik vastused on juristi valideeritud andmestiku põhjal",
@@ -431,11 +452,11 @@ export default function Page() {
       </section>
 
       {/* ── 05 TÄITMISSÜSTEEM ────────────────── */}
-      <section id="taitmissusteem" style={SEC(C.bg)}>
-        <div style={WRAP}>
+      <section id="taitmissusteem" className="section-pad" style={SEC(C.bg)}>
+        <div className="wrap-pad" style={WRAP}>
           <SectionTag n="05" label="Täitmissüsteem" />
           <H2>Eesmärgid ja vastutus</H2>
-          <div style={{ ...GRID3, marginTop: 40 }}>
+          <div className="col3" style={{ marginTop: 40 }}>
             <div>
               <ColLabel>Kvartalieesmärgid 2024</ColLabel>
               <DataTable
@@ -475,10 +496,10 @@ export default function Page() {
       </section>
 
       {/* ── 06 TOODE ─────────────────────────── */}
-      <section id="toode" style={SEC(C.bg)}>
-        <div style={WRAP}>
+      <section id="toode" className="section-pad" style={SEC(C.bg)}>
+        <div className="wrap-pad" style={WRAP}>
           <SectionTag n="06" label="Toode" />
-          <div style={GRID2}>
+          <div className="col2">
             <div>
               <H2>Toote teekond</H2>
               <Sub>Viis selget versioonitasandit - iga järgnev avab uue tuluvoo ja suurendab kasutajate haaret.</Sub>
@@ -514,12 +535,12 @@ export default function Page() {
       </section>
 
       {/* ── 07 ÄRIMUDEL ──────────────────────── */}
-      <section id="hinnad" style={SEC(C.bg)}>
-        <div style={WRAP}>
+      <section id="hinnad" className="section-pad" style={SEC(C.bg)}>
+        <div className="wrap-pad" style={WRAP}>
           <SectionTag n="07" label="Ärimudel" />
           <H2>Hinnakujundus</H2>
 
-          <div style={{ ...GRID4, marginTop: 40, marginBottom: 56 }}>
+          <div className="col4" style={{ marginTop: 40, marginBottom: 56 }}>
             {[
               { sub: "Projektipõhine", seg: "Eraisik",    price: "€29",     unit: "küsimus", items: ["Üks detailne vastus", "Seaduseviited ja kohtulahendid", "Praktilised järgmised sammud"] },
               { sub: "Subscription",  seg: "VKE",         price: "€49",     unit: "kuu",     featured: true,  items: ["Piiramatu küsimuste arv", "Kõik oigusvaldkonnad", "Dokumendianalüüs", "Kuni 50 töötajaga ettevoted"] },
@@ -542,10 +563,10 @@ export default function Page() {
       </section>
 
       {/* ── 08 VISIOON ───────────────────────── */}
-      <section id="visioon" style={SEC(C.bg)}>
-        <div style={WRAP}>
+      <section id="visioon" className="section-pad" style={SEC(C.bg)}>
+        <div className="wrap-pad" style={WRAP}>
           <SectionTag n="08" label="Globaalne visioon" />
-          <div style={GRID2}>
+          <div className="col2">
             <div>
               <H2>Oiguse infrastruktuur maailmale</H2>
               <Sub>
@@ -593,10 +614,10 @@ export default function Page() {
       </section>
 
       {/* ── 09 KKK ───────────────────────────── */}
-      <section id="kkk" style={SEC(C.bg)}>
-        <div style={WRAP}>
+      <section id="kkk" className="section-pad" style={SEC(C.bg)}>
+        <div className="wrap-pad" style={WRAP}>
           <SectionTag n="09" label="Investori KKK" />
-          <div style={GRID2}>
+          <div className="col2">
             <div>
               <H2>Küsimused ja vastused</H2>
               <Sub>
@@ -625,7 +646,7 @@ export default function Page() {
       {/* ── CTA ──────────────────────────────── */}
       <section style={{ padding: "148px 0", background: C.bg, position: "relative", overflow: "hidden" }}>
         <div style={{ position: "absolute", top: "50%", left: "50%", transform: "translate(-50%,-50%)", width: 1000, height: 600, background: `radial-gradient(ellipse, rgba(201,152,26,0.07) 0%, transparent 65%)`, pointerEvents: "none" }} />
-        <div style={{ ...WRAP, textAlign: "center", position: "relative" }}>
+        <div className="wrap-pad" style={{ ...WRAP, textAlign: "center", position: "relative" }}>
           <p style={{ ...LBL, marginBottom: 36 }}>Ühinege visiooniga</p>
           <h2 style={{ fontSize: "clamp(2.6rem, 5.5vw, 4.8rem)", fontWeight: 600, letterSpacing: "-0.036em", color: C.white, lineHeight: 1.04, marginBottom: 20, maxWidth: 620, marginLeft: "auto", marginRight: "auto" }}>
             Seadused ei pea olema{" "}
