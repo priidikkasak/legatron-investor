@@ -29,7 +29,6 @@ const SEC  = (bg = C.bg): React.CSSProperties => ({ background: bg, padding: "12
 const SectionTag = ({ n, label }: { n: string; label: string }) => (
   <div style={{ display: "flex", alignItems: "center", gap: 16, marginBottom: 64 }}>
     <span style={{ fontSize: 13, fontWeight: 500, letterSpacing: "0.12em", color: C.muted }}>{n}</span>
-    <span style={{ width: 24, height: 1, background: C.border2 }} />
     <span style={{ fontSize: 13, fontWeight: 500, letterSpacing: "0.14em", textTransform: "uppercase", color: C.sub }}>{label}</span>
   </div>
 );
