@@ -163,14 +163,14 @@ export default function Page() {
     <div style={{ background: C.bg, color: C.text }}>
 
       {/* NAV */}
-      <nav style={{ position: "fixed", top: 0, left: 0, right: 0, zIndex: 50, background: "rgba(8,8,8,0.9)", backdropFilter: "blur(24px)", borderBottom: `1px solid ${C.border}` }}>
-        <div style={{ ...WRAP, height: 56, display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-          <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-            <svg width="15" height="15" viewBox="0 0 15 15" fill="none">
-              <rect width="6" height="6" fill={C.white} />
-              <rect x="9" y="9" width="6" height="6" fill={C.gold} />
+      <nav style={{ position: "fixed", top: 0, left: 0, right: 0, zIndex: 50, background: "rgba(8,8,8,0.92)", backdropFilter: "blur(24px)" }}>
+        <div style={{ ...WRAP, height: 60, display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 13 }}>
+            <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
+              <rect x="0" y="0" width="14" height="14" fill={C.white} />
+              <rect x="12" y="12" width="14" height="14" fill={C.gold} />
             </svg>
-            <span style={{ fontSize: "0.875rem", fontWeight: 500, color: C.white, letterSpacing: "-0.01em" }}>Legatron</span>
+            <span style={{ fontSize: "1.25rem", fontFamily: "'DM Serif Display', Georgia, serif", fontWeight: 400, color: C.white, letterSpacing: "0.01em", lineHeight: 1 }}>Legatron</span>
           </div>
           <div style={{ display: "flex", gap: 32 }}>
             {["Lahendus", "Turg", "Toode", "Hinnad", "Visioon", "KKK"].map(l => (
@@ -227,7 +227,7 @@ export default function Page() {
       </section>
 
       {/* ── 01 MISSIOON ──────────────────────── */}
-      <section id="missioon" style={SEC(C.surf)}>
+      <section id="missioon" style={SEC(C.bg)}>
         <div style={WRAP}>
           <SectionTag n="01" label="Missioon" />
           <div style={GRID2}>
@@ -328,7 +328,7 @@ export default function Page() {
       </section>
 
       {/* ── 03 TURG ──────────────────────────── */}
-      <section id="turg" style={SEC(C.surf)}>
+      <section id="turg" style={SEC(C.bg)}>
         <div style={WRAP}>
           <SectionTag n="03" label="Turg" />
           <div style={GRID2}>
@@ -431,7 +431,7 @@ export default function Page() {
       </section>
 
       {/* ── 05 TÄITMISSÜSTEEM ────────────────── */}
-      <section id="taitmissusteem" style={SEC(C.surf)}>
+      <section id="taitmissusteem" style={SEC(C.bg)}>
         <div style={WRAP}>
           <SectionTag n="05" label="Täitmissüsteem" />
           <H2>Eesmärgid ja vastutus</H2>
@@ -514,7 +514,7 @@ export default function Page() {
       </section>
 
       {/* ── 07 ÄRIMUDEL ──────────────────────── */}
-      <section id="hinnad" style={SEC(C.surf)}>
+      <section id="hinnad" style={SEC(C.bg)}>
         <div style={WRAP}>
           <SectionTag n="07" label="Ärimudel" />
           <H2>Hinnakujundus</H2>
@@ -593,7 +593,7 @@ export default function Page() {
       </section>
 
       {/* ── 09 KKK ───────────────────────────── */}
-      <section id="kkk" style={SEC(C.surf)}>
+      <section id="kkk" style={SEC(C.bg)}>
         <div style={WRAP}>
           <SectionTag n="09" label="Investori KKK" />
           <div style={GRID2}>
